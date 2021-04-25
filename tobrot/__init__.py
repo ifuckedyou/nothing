@@ -116,6 +116,8 @@ LOG_COMMAND = os.environ.get("LOG_COMMAND", "log")
 CLONE_COMMAND_G = os.environ.get("CLONE_COMMAND_G", "gclone")
 UPLOAD_COMMAND = os.environ.get("UPLOAD_COMMAND", "upload")
 RENEWME_COMMAND = os.environ.get("RENEWME_COMMAND", "renewme")
+TOGGLE_VID = os.environ.get("TOGGLE_VID", "toggleasvid")
+TOGGLE_DOC = os.environ.get("TOGGLE_DOC", "toggleasdoc")
 BOT_START_TIME = time.time()
 # dict to control uploading and downloading
 gDict = defaultdict(lambda: [])
