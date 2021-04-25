@@ -32,6 +32,7 @@ from tobrot import (
     TG_MAX_FILE_SIZE,
     UPLOAD_AS_DOC,
     gDict,
+    user_specific_config,
 )
 from tobrot.helper_funcs.copy_similar_file import copy_file
 from tobrot.helper_funcs.display_progress import humanbytes, Progress
@@ -71,7 +72,7 @@ async def upload_to_tg(
         new_m_esg = message
         if not message.photo:
             new_m_esg = await message.reply_text(
-                f"Found {len(directory_contents)} files <a href='tg://user?id={from_user}'>🤒</a>",
+                f"<b>Found</b> <code>{len(directory_contents)}</code✓ <b>Files <a href='tg://user?id={from_user}'>📡</a></b>",
                 quote=True
                 # reply_to_message_id=message.message_id
             )
@@ -104,7 +105,7 @@ async def upload_to_tg(
             await i_m_s_g.edit_text(
                 f"Detected File Size: {d_f_s} 😡\n"
                 f"<code>{ba_se_file_name}</code> splitted into {number_of_files} files.\n"
-                "trying to upload to Telegram, now ..."
+                "Trying to upload to Telegram, now ..."
             )
             for le_file in totlaa_sleif:
                 # recursion: will this FAIL somewhere?
@@ -307,7 +308,13 @@ async def upload_single_file(
         DOWNLOAD_LOCATION, "thumbnails", str(from_user) + ".jpg"
     )
     # LOGGER.info(thumbnail_location)
-    if UPLOAD_AS_DOC.upper() == "TRUE":  # todo
+    dyna_user_config_upload_as_doc = False
+    for key in iter(user_specific_config):
+        if key == from_user:
+            dyna_user_config_upload_as_doc=user_specific_config[key].upload_as_doc
+            LOGGER.info(f'Found dyanamic config for user {from_user}')
+            
+    if UPLOAD_AS_DOC.upper() == "TRUE" or dyna_user_config_upload_as_doc:  # todo
         thumb = None
         thumb_image_path = None
         if os.path.exists(thumbnail_location):
@@ -318,7 +325,7 @@ async def upload_single_file(
         message_for_progress_display = message
         if not edit_media:
             message_for_progress_display = await message.reply_text(
-                "starting upload of {}".format(os.path.basename(local_file_name))
+                "<b>Starting Upload 📤</b>\n\n<b>File Name :</b> <code>{}</code>".format(os.path.basename(local_file_name))
             )
             prog = Progress(from_user, client, message_for_progress_display)
         sent_message = await message.reply_document(
@@ -348,7 +355,7 @@ async def upload_single_file(
             message_for_progress_display = message
             if not edit_media:
                 message_for_progress_display = await message.reply_text(
-                    "starting upload of {}".format(os.path.basename(local_file_name))
+                    "<b>Starting Upload 📤</b>\n\n<b>File Name :</b> <code>{}</code>".format(os.path.basename(local_file_name))
                 )
                 prog = Progress(from_user, client, message_for_progress_display)
             if local_file_name.upper().endswith(("MKV", "MP4", "WEBM")):
