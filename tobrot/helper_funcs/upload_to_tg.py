@@ -295,7 +295,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
 
 #
 
-async def upload_single_file(message, local_file_name, caption_str, from_user, edit_media):
+async def upload_single_file(message, local_file_name, caption_str, from_user, client, edit_media, yt_thumb):
     await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
     sent_message = None
     start_time = time.time()
