@@ -256,6 +256,7 @@ async def call_apropriate_function(
 
 
 # https://github.com/jaskaranSM/UniBorg/blob/6d35cf452bce1204613929d4da7530058785b6b1/stdplugins/aria.py#L136-L164
+
 async def check_progress_for_dl(aria2, gid, event, previous_message):
     # g_id = event.reply_to_message.from_user.id
     try:
@@ -277,12 +278,13 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                     pass
                 #
                 if is_file is None:
-                    msgg = f"Conn: {file.connections} <b>|</b> GID: <code>{gid}</code>"
+                    msgg = f"<b>▶ Connections : {file.connections} </b>\n<b>▶ GID :</b> <code>{gid}</code>"
                 else:
-                    msgg = f"P: {file.connections} | S: {file.num_seeders} <b>|</b> GID: <code>{gid}</code>"
-                msg = f"\n`{downloading_dir_name}`"
-                msg += f"\n<b>Speed</b>: {file.download_speed_string()}"
-                msg += f"\n<b>Status</b>: {file.progress_string()} <b>of</b> {file.total_length_string()} <b>|</b> {file.eta_string()} <b>|</b> {msgg}"
+                    msgg = f"<b>▶Info :- P: {file.connections} || S: {file.num_seeders} </b>\n<b>▶ GID :</b> <code>{gid}</code>"
+                msg = f"\n<b>▶ File Name :</b> `{downloading_dir_name}`"
+                msg += f"\n<b>▶ Speed</b> : {file.download_speed_string()}"
+                msg += f"\n<b>▶ Size : {file.total_length_string()} </b>"
+                msg += f"\n<b>▶ Downloaded</b> : {file.progress_string()} \n<b>▶ ETA :</b> {file.eta_string()} \n {msgg}"
                 # msg += f"\nSize: {file.total_length_string()}"
 
                 # if is_file is None :
@@ -297,7 +299,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 ikeyboard = []
                 ikeyboard.append(
                     InlineKeyboardButton(
-                        "Cancel 🚫", callback_data=(f"cancel {gid}").encode("UTF-8")
+                        "♻ Cancel ♻", callback_data=(f"cancel {gid}").encode("UTF-8")
                     )
                 )
                 inline_keyboard.append(ikeyboard)
@@ -370,7 +372,6 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 "<u>error</u> :\n<code>{}</code> \n\n#error".format(str(e))
             )
             return False
-
 
 # https://github.com/jaskaranSM/UniBorg/blob/6d35cf452bce1204613929d4da7530058785b6b1/stdplugins/aria.py#L136-L164
 
