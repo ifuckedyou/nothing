@@ -337,11 +337,7 @@ async def upload_single_file(
             img.resize((32, 32))
             img.save(thumb_image_path, "JPEG")
         thumb = None
-        thumb_image_path = None
-        if os.path.exists(thumbnail_location):
-            thumb_image_path = await copy_file(
-                thumbnail_location, os.path.dirname(os.path.abspath(local_file_name))
-            )
+        if thumb_image_path is not None and os.path.isfile(thumb_image_path):
             thumb = thumb_image_path
         message_for_progress_display = message
         if not edit_media:
