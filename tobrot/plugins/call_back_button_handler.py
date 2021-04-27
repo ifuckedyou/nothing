@@ -33,7 +33,7 @@ async def button(bot, update: CallbackQuery):
         else:
             await bot.answer_callback_query(
                 callback_query_id=update.id,
-                text="who are you? 🤪🤔🤔🤔",
+                text="Can't Cancel Other's Downloads",
                 show_alert=True,
                 cache_time=0,
             )
