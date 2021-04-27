@@ -1,3 +1,4 @@
+ 
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K | gautamajay52
@@ -50,7 +51,7 @@ class Progress:
             [
                 [
                     InlineKeyboardButton(
-                        "Cancel 🚫",
+                        "✘ Cancel Upload ✘",
                         callback_data=(
                             f"gUPcancel/{chat_id}/{mes_id}/{from_user}"
                         ).encode("UTF-8"),
@@ -76,7 +77,7 @@ class Progress:
             elapsed_time = TimeFormatter(milliseconds=elapsed_time)
             estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
 
-            progress = "[{0}{1}] \nP: {2}%\n".format(
+            progress = "<b>╭────── ⌊ Uploading : [ {2} ] 📤 ⌉</b>\n<b>│ </b>\n<b>├〚 {0}{1} 〛</b>\n<b>│</b>".format(
                 "".join(
                     [FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]
                 ),
@@ -89,7 +90,7 @@ class Progress:
                 round(percentage, 2),
             )
 
-            tmp = progress + "{0} of {1}\nSpeed: {2}/s\nETA: {3}\n".format(
+            tmp = progress + "\n<b>├ Uploaded : {0}</b>\n<b>├ Total : {1}</b>\n</b>├ Speed : {2}</b>\n<b>├ ETA : {3}</b>\n│</b>\n<b>╰── ⌊ 💠 @TamilMoviesML 💠 ⌉</b>".format(
                 humanbytes(current),
                 humanbytes(total),
                 humanbytes(speed),
