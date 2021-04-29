@@ -9,6 +9,8 @@ import re
 import shutil
 import subprocess
 import time
+import math
+import io
 from functools import partial
 from pathlib import Path
 
@@ -334,7 +336,7 @@ async def upload_single_file(
             disable_notification=True,
             progress=prog.progress_for_pyrogram,
             progress_args=(
-                f"{os.path.basename(local_file_name)}",
+                f"",
                 start_time,
             ),
         )
@@ -439,7 +441,7 @@ async def upload_single_file(
                         disable_notification=True,
                         progress=prog.progress_for_pyrogram,
                         progress_args=(
-                            f"{os.path.basename(local_file_name)}",
+                            f"",
                             start_time,
                         ),
                     )
@@ -491,7 +493,7 @@ async def upload_single_file(
                         disable_notification=True,
                         progress=prog.progress_for_pyrogram,
                         progress_args=(
-                            f"{os.path.basename(local_file_name)}",
+                            f"",
                             start_time,
                         ),
                     )
@@ -529,7 +531,7 @@ async def upload_single_file(
                         disable_notification=True,
                         progress=prog.progress_for_pyrogram,
                         progress_args=(
-                            f"{os.path.basename(local_file_name)}",
+                            f"",
                             start_time,
                         ),
                     )
