@@ -118,6 +118,7 @@ UPLOAD_COMMAND = os.environ.get("UPLOAD_COMMAND", "upload")
 RENEWME_COMMAND = os.environ.get("RENEWME_COMMAND", "renewme")
 TOGGLE_VID = os.environ.get("TOGGLE_VID", "toggleasvid")
 TOGGLE_DOC = os.environ.get("TOGGLE_DOC", "toggleasdoc")
+RENAME_CMD = os.environ.get("RENAME_CMD", "rename")
 BOT_START_TIME = time.time()
 # dict to control uploading and downloading
 gDict = defaultdict(lambda: [])
