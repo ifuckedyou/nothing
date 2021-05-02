@@ -278,13 +278,13 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                     pass
                 #
                 if is_file is None:
-                    msgg = f"<b>▶ Connections : {file.connections} </b>\n<b>▶ GID :</b> <code>{gid}</code>"
+                    msgg = f"<b>➩Cᴏɴɴᴇᴄᴛɪᴏɴs​ : {file.connections} </b>\n<b>➩ Gɪᴅ​ :</b> <code>{gid}</code>"
                 else:
-                    msgg = f"<b>▶Info :- P: {file.connections} || S: {file.num_seeders} </b>\n<b>▶ GID :</b> <code>{gid}</code>"
-                msg = f"\n<b>▶ File Name :</b> `{downloading_dir_name}`"
-                msg += f"\n<b>▶ Speed</b> : {file.download_speed_string()}"
-                msg += f"\n<b>▶ Size : {file.total_length_string()} </b>"
-                msg += f"\n<b>▶ Downloaded</b> : {file.progress_string()} \n<b>▶ ETA :</b> {file.eta_string()} \n {msgg}"
+                    msgg = f"<b>➩Iɴꜰᴏ​ :- P: {file.connections} || S: {file.num_seeders} </b>\n<b>➩ Gɪᴅ​ :</b> <code>{gid}</code>"
+                msg = f"\n<b>➩ Fɪʟᴇ Nᴀᴍᴇ​ :</b> `{downloading_dir_name}`"
+                msg += f"\n<b>➩ Sᴘᴇᴇᴅ​</b> : {file.download_speed_string()}"
+                msg += f"\n<b>➩ Sɪᴢᴇ​ : {file.total_length_string()} </b>"
+                msg += f"\n<b>➩ Dᴏᴡɴʟᴏᴀᴅᴇᴅ​</b> : {file.progress_string()} \n<b>➩ Eᴛᴀ​ :</b> {file.eta_string()} \n {msgg}"
                 # msg += f"\nSize: {file.total_length_string()}"
 
                 # if is_file is None :
