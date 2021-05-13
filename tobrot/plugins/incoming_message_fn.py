@@ -54,7 +54,7 @@ async def incoming_message_f(client, message):
     g_id = message.from_user.id
     u_men = message.from_user.mention
     credit = await message.reply_text(
-        f"<b>⚙ Leeching For :</b> {u_men}", parse_mode="html"
+        f"<b>First Select The Options ☄️\n\n➩ /toggleasdoc2@LeexhML_Bot - To Upload Ur Url/Torrent Uploads As Document To Telegram➩\n/toggletovid2@LeexhML_Bot - To Upload Ur Url/Torrent As Streamable (.mkv/.mp4/.avi) To Telegram", parse_mode="html"
     )
     i_m_sefg = await message.reply_text("processing...", quote=True)
     # get link from the incoming message
