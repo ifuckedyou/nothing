@@ -89,7 +89,7 @@ class Progress:
                 round(percentage, 2),
             )
 
-            tmp = progress + "\n<b>├ Uploaded : {0}</b>\n<b>├ Total : {1}</b>\n<b>├ Speed : {2}</b>\n<b>├ ETA : {3}</b>\n<b>│</b>\n<b>╰── ⌊ 💠 @TamilMoviesML 💠 ⌉</b>".format(
+            tmp = progress + "\n<b>├ Uploaded : {0}</b>\n<b>├ 💾Total Size : {1}</b>\n<b>├ 🚀Speed : {2}</b>\n<b>├ ⏰Estimated Time : {3}</b>\n<b>│</b>\n<b>╰── ⌊ 💠 @Hiroshi_BotUpdates 💠 ⌉</b>".format(
                 humanbytes(current),
                 humanbytes(total),
                 humanbytes(speed),
