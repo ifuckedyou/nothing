@@ -76,7 +76,7 @@ class Progress:
             elapsed_time = TimeFormatter(milliseconds=elapsed_time)
             estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
 
-            progress = "<b>╭────── ⌊ Uploading : [ {2} ] 📤 ⌉</b>\n<b>│ </b>\n<b>├〚 {0}{1} 〛</b>\n<b>│</b>".format(
+            progress = "<b>╭────── ⌊ 𝗨𝗽𝗹𝗼𝗮𝗱𝗶𝗻𝗴​ : [ {2} ] 📤 ⌉</b>\n<b>│ </b>\n<b>├〚 {0}{1} 〛</b>\n<b>│</b>".format(
                 "".join(
                     [FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]
                 ),
@@ -89,7 +89,7 @@ class Progress:
                 round(percentage, 2),
             )
 
-            tmp = progress + "\n<b>├ 💫Uploaded : {0}</b>\n<b>├ 💾Total Size : {1}</b>\n<b>├ 🚀Speed : {2}</b>\n<b>├ ⏰Estimated Time : {3}</b>\n<b>│</b>\n<b>╰── ⌊ 💠 @Hiroshi_BotUpdates 💠 ⌉</b>".format(
+            tmp = progress + "\n<b>├ 💫𝗨𝗽𝗹𝗼𝗮𝗱𝗲𝗱​ : {0}</b>\n\n<b>├ 💾𝗧𝗼𝘁𝗮𝗹 𝗦𝗶𝘇𝗲​ : {1}</b>\n\n<b>├ 🚀𝗦𝗽𝗲𝗲𝗱​ : {2}</b>\n<b>├ ⏰𝗘𝘀𝘁𝗶𝗺𝗮𝘁𝗲𝗱 𝗧𝗶𝗺𝗲​ : {3}</b>\n<b>│</b>\n<b>╰── 『 💠 @Hiroshi_BotUpdates 💠 』</b>".format(
                 humanbytes(current),
                 humanbytes(total),
                 humanbytes(speed),
